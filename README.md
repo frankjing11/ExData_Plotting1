@@ -119,46 +119,46 @@ dev.off()
 
 ### Plot 2
 
-##read the original dataset
+####read the original dataset
 data <- read.table("household_power_consumption.txt", header=T, sep=";", na.strings="?")
 
-#select time period from 2007-02-01 to 2007-02-02
+####select time period from 2007-02-01 to 2007-02-02
 data1 <- data[data$Date %in% c("1/2/2007","2/2/2007"),]
 
-#create a new datetime variable with date and time
+####create a new datetime variable with date and time
 data2 <-cbind(data1,strptime(paste(data1$Date, data1$Time, sep=" "),"%d/%m/%Y %H:%M:%S"))
 colnames(data2)[10] <- "Datetime"
 
-# open device
+####open device
 #if(!file.exists('figures')) dir.create('figures')
 png(filename = './plot2.png', width = 480, height = 480, units='px')
 
-# Create plot
+####Create plot
 plot(data2$Datetime, data2$Global_active_power, 
      type="l", col="black", xlab="", ylab="Global Active Power (kilowatts)")
 
-# close device
+####close device
 dev.off()
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
 
 
 ### Plot 3
 
-#read the original dataset
+####read the original dataset
 data <- read.table("household_power_consumption.txt", header=T, sep=";", na.strings="?")
 
-#select time period from 2007-02-01 to 2007-02-02
+####select time period from 2007-02-01 to 2007-02-02
 data1 <- data[data$Date %in% c("1/2/2007","2/2/2007"),]
 
-#create a new datetime variable with date and time
+####create a new datetime variable with date and time
 data2 <-cbind(data1,strptime(paste(data1$Date, data1$Time, sep=" "),"%d/%m/%Y %H:%M:%S"))
 colnames(data2)[10] <- "Datetime"
 
-# open device
+####open device
 #if(!file.exists('figures')) dir.create('figures')
 png(filename = './plot3.png', width = 480, height = 480, units='px')
 
-# Create plot
+####Create plot
 plot(data2$Datetime, data2$Sub_metering_1, xlab = '', 
      ylab = 'Energy sub metering', type = 'n')
 lines(data2$Datetime, data2$Sub_metering_1, type = 'l')
@@ -167,28 +167,28 @@ lines(data2$Datetime, data2$Sub_metering_3, col = 'blue', type = 'l')
 legend('topright', col = c('black', 'red', 'blue'), 
        legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'), lwd = 1)
 
-# close device
+####close device
 dev.off()
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
 
 
 ### Plot 4
 
-#read the original dataset
+####read the original dataset
 data <- read.table("household_power_consumption.txt", header=T, sep=";", na.strings="?")
 
-#select time period from 2007-02-01 to 2007-02-02
+####select time period from 2007-02-01 to 2007-02-02
 data1 <- data[data$Date %in% c("1/2/2007","2/2/2007"),]
 
-#create a new datetime variable with date and time
+####create a new datetime variable with date and time
 data2 <-cbind(data1,strptime(paste(data1$Date, data1$Time, sep=" "),"%d/%m/%Y %H:%M:%S"))
 colnames(data2)[10] <- "Datetime"
 
-# open device
+####open device
 #if(!file.exists('figures')) dir.create('figures')
 png(filename = './plot4.png', width = 480, height = 480, units='px')
 
-# Create plot
+####Create plot
 par(mfrow = c(2, 2))
 plot(data2$Datetime, data2$Global_active_power, xlab = '', 
      ylab = 'Global Active Power (kilowatt)', type = 'l')
@@ -206,7 +206,7 @@ legend("topright", bty="n", legend=c("Sub_metering_1","Sub_metering_2","Sub_mete
 plot(data2$Datetime, data2$Global_reactive_power, 
      xlab = 'datetime', ylab = 'Global_reactive_power', type = 'l')
 
-# close device
+####close device
 dev.off()
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
