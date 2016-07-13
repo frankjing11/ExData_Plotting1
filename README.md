@@ -104,7 +104,6 @@ data2 <-cbind(data1,strptime(paste(data1$Date, data1$Time, sep=" "),"%d/%m/%Y %H
 colnames(data2)[10] <- "Datetime"
 
 ####open device
-#if(!file.exists('figures')) dir.create('figures')
 png(filename = './plot1.png', width = 480, height = 480, units='px')
 
 ####Create plot
@@ -130,7 +129,6 @@ data2 <-cbind(data1,strptime(paste(data1$Date, data1$Time, sep=" "),"%d/%m/%Y %H
 colnames(data2)[10] <- "Datetime"
 
 ####open device
-#if(!file.exists('figures')) dir.create('figures')
 png(filename = './plot2.png', width = 480, height = 480, units='px')
 
 ####Create plot
@@ -155,7 +153,6 @@ data2 <-cbind(data1,strptime(paste(data1$Date, data1$Time, sep=" "),"%d/%m/%Y %H
 colnames(data2)[10] <- "Datetime"
 
 ####open device
-#if(!file.exists('figures')) dir.create('figures')
 png(filename = './plot3.png', width = 480, height = 480, units='px')
 
 ####Create plot
@@ -185,7 +182,6 @@ data2 <-cbind(data1,strptime(paste(data1$Date, data1$Time, sep=" "),"%d/%m/%Y %H
 colnames(data2)[10] <- "Datetime"
 
 ####open device
-#if(!file.exists('figures')) dir.create('figures')
 png(filename = './plot4.png', width = 480, height = 480, units='px')
 
 ####Create plot
